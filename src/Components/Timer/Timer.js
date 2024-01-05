@@ -1,6 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const Counter = () => {
+const Timer = () => {
+
+    const count = useSelector((state)=> state.counter.value)
+
+    
     return (
         <div className='card'>
             <div className='card-header bg-secondary'>
@@ -8,7 +13,7 @@ const Counter = () => {
             </div>
 
             <div className='card-body'>
-                <h1>00</h1>
+                <h1>{count}</h1>
                 <div className='my-4'>
                     <button className='btn btn-success'> Increase </button>
                     <button className='btn mx-2 btn-danger' > Decrease </button>
@@ -18,4 +23,4 @@ const Counter = () => {
     );
 };
 
-export default Counter;
+export default Timer;
